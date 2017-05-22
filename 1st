@@ -1,0 +1,78 @@
+#include <iostream>
+#include <windows.h>
+#include <string>
+#include <conio.h>
+using namespace std;
+
+void clearscreen()
+{
+    HANDLE hOut;
+    COORD Position;
+
+    hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+
+    Position.X = 0;
+    Position.Y = 0;
+    SetConsoleCursorPosition(hOut, Position);
+}
+
+s_earch()
+{
+    string s="hello";
+    bool flag =false;
+
+    for(char ch;ch!=13;)
+    {
+      system("CLS");
+      if(flag==false)
+        flag=true;
+      else  displayChoices(s);
+
+    cout<<"Enter key words"<<endl;
+    cout<<s;
+    ch= getch();
+    s.push_back(ch);
+    
+    }
+    
+cout<<"Enter
+
+
+
+}
+
+void mainMenu()
+{
+    cout<<"Code management software"<<endl;
+    cout<<"Press 1 to search the database"<<endl;
+    cout<<"Press 2 to add code snippet to database"<<endl;
+    cout<<"Press 3 to remove code snippet from database"<<endl;
+
+    int choice;
+    label:
+    cin>>choice;
+    switch(choice)
+    {
+        case 1:  s_earch();
+           // cout<<"1";
+        break;
+
+        case 2: //add();
+            cout<<"2";
+        break;
+
+        case 3: //d_elete();
+            cout<<"3";
+        break;
+
+        default: cout<<"Enter a valid choice!!!"<<endl;
+        goto label;
+    }
+
+  system("CLS");
+}
+int main()
+{
+    mainMenu();
+    return 0;
+}
